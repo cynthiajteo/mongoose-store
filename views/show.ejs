@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+        <h1><%=product.name%></h1>
+        <div class="show-container">
+            <div class="show-item">
+                <img
+                    id="show-img"
+                    src="<%=product.img%>
+                "
+                    alt="<%=product.name%>"
+                />
+                <br />
+                <div class="show-info">
+                    <span id="description"><%=product.description%></span>
+                    <br />
+                    <span id="price">Price: $<%=product.price%></span>
+
+                    <p>
+                        Remaining: <span id="remaining"><%=product.qty%></span>
+                    </p>
+
+                    <% if (product.qty > 0) { %>
+                    <form
+                        action="/products/<%=product.id; %>?_method=POST"
+                        method="POST"
+                        id="buy-form"
+                    >
+                        <input type="submit" id="buy-btn" value="BUY" />
+                    </form>
+
+                    <% } else {%>
+                    <button type="disabled" id="oos-btn">Out of Stock</button>
+                    <br />
+                    <% } %>
+
+                    <a href="/products/<%=product.id%>/edit"
+                        ><button>Edit Product</button></a
+                    >
+                </div>
+            </div>
+            <div class="action-btns">
+                <a href="/products"><button>Home</button></a>
+                <form
+                    action="/products/<%=product.id%>?_method=DELETE"
+                    method="POST"
+                >
+                    <input type="submit" id="delete-btn" value="DELETE" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

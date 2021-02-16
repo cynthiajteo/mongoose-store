@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+        <h1>Welcome to Mongoose Store</h1>
+        <div class="index-container">
+            <div class="add-btn">
+                <a href="/products/new"
+                    ><button id="add">Add New Product</button></a
+                >
+            </div>
+            <ul id="index-ul">
+                <% for(let i = 0; i < products.length; i++) { %>
+                <li class="product-item">
+                    <a href="/products/<%=products[i].id; %>" id="index-name">
+                        <%=products[i].name;%></a
+                    ><br />
+
+                    <a href="/products/<%=products[i].id; %>">
+                        <img
+                            id="index-img"
+                            src="<%=products[i].img%>"
+                            alt="<%=products[i].name%>"
+                        />
+                    </a>
+
+                    <br />
+                    <span id="index-price"
+                        >Price: $<%=products[i].price%>
+                    </span>
+                    <br />
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </body>
+</html>

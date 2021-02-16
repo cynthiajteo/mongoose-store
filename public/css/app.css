@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&display=swap');
+
+body {
+    font-family: 'Crimson Pro', serif;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* INDEX PAGE CSS */
+.index-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 90%;
+}
+
+#index-ul {
+    width: 80%;
+    display: inline-flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.product-item {
+    width: 300px;
+    height: 300px;
+    font-size: 20px;
+    background-color: lightcyan;
+    border-radius: 2em;
+    margin: 10px;
+    justify-content: space-evenly;
+    line-height: 0.5;
+    box-shadow: 1px 1px 10px #bbb, -1px -1px 10px #bbb, 1px -1px 10px #bbb,
+        -1px 1px 10px #bbb;
+}
+
+#index-name,
+#index-price {
+    line-height: 3;
+}
+
+#index-img {
+    width: 180px;
+    border-radius: 50%;
+}
+
+#index-img:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#index-name:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* SHOW PAGE CSS */
+.show-container {
+    text-align: center;
+    display: inline-flex;
+    justify-content: space-between;
+    height: 650px;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.show-item {
+    height: 80%;
+    width: 380px;
+    padding: 25px 15px 0px 15px;
+    background-color: rgb(191, 240, 255);
+    border-radius: 1em;
+    margin: 0 auto;
+    font-size: 24px;
+    box-shadow: 1px 1px 10px #bbb, -1px -1px 10px #bbb, 1px -1px 10px #bbb,
+        -1px 1px 10px #bbb;
+}
+
+#remaining {
+    color: rgb(30, 30, 245);
+}
+
+#description {
+    font-size: 20px;
+}
+
+#price {
+    font-size: 18px;
+}
+
+#show-img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+
+#oos-btn:hover {
+    cursor: not-allowed;
+    background-color: lightcoral;
+}
+
+#oos-btn:hover {
+    cursor: not-allowed;
+    background-color: lightcoral;
+}
+
+.action-btns {
+    text-align: center;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 350px;
+    margin: 0 auto;
+}
+
+button,
+#delete-btn {
+    font-size: 14px;
+}
+
+#delete-btn {
+    color: white;
+    background-color: tomato;
+    width: 110px;
+    margin: 0 auto;
+    height: 38px;
+}
+
+#buy-btn {
+    color: white;
+    background-color: rgb(40, 152, 216);
+    width: 100px;
+    font-size: 18px;
+}
+
+#buy-form {
+    margin-bottom: 0ch;
+}
+
+/* NEW & EDIT PAGE CSS */
+.edit-container,
+.new-container {
+    width: 50vw;
+    height: 60vw;
+    margin: 0 auto;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #bbb, -1px -1px 10px #bbb, 1px -1px 10px #bbb,
+        -1px 1px 10px #bbb;
+}
+
+.edit-form,
+.new-form {
+    width: 100%;
+    background: #cefff7;
+    border-radius: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--dusty-blue);
+}
+
+input:focus {
+    /* the outline property selects the default blue border that shows up on inputs. giving it a value of 0 gets rid of it */
+    outline: 0;
+    border: 1px solid var(--purple);
+}
+
+input[type='submit'] {
+    width: 300px;
+    height: 40px;
+    font-size: 1em;
+    color: black;
+    border: 1px solid black;
+}
+
+input[type='text'] {
+    font-size: 16px;
+}
+
+input[type='number'] {
+    font-size: 16px;
+}
+
+/* ADD NEW PRODUCT BUTTON */
+.add-btn {
+    width: 100%;
+    text-align: center;
+}
+
+#add {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background: white;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    border: 1px solid rgb(163, 163, 163);
+}
+
+#add:before {
+    content: '';
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+#add:active:after {
+    background: transparent;
+}
+
+#add:hover:before {
+    opacity: 1;
+}
+
+#add:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 300% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+button:hover {
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}

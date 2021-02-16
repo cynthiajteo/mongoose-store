@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('./partials/head.ejs')%>
+    </head>
+    <body>
+        <h1>Add New Product</h1>
+
+        <div class="new-container">
+            <div class="new-form">
+                <form action="/products" method="POST">
+                    Name: <input type="text" name="name" id="name" /><br />
+                    Description:
+                    <input type="text" name="description" id="description" />
+                    <br />Image URL:
+                    <input type="text" name="img" id="img" /><br />
+                    Price:
+                    <input
+                        type="number"
+                        name="price"
+                        id="price"
+                        min="1"
+                    /><br />
+                    Qty:
+                    <input type="number" name="qty" id="qty" min="0" /><br />
+                    <input type="submit" name="add" value="add" />
+                </form>
+                <a href="/products"><button id="home-btn">Home</button></a>
+            </div>
+        </div>
+    </body>
+</html>
